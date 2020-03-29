@@ -7,10 +7,12 @@
     <table class="table table-bordered">
         <tr>
             <th>id</th>
+            
             <td>{{ $task->id }}</td>
         </tr>
         <tr>
             <th>タスク</th>
+            <td>{{ $task->status }}</td>
             <td>{{ $task->content }}</td>
         </tr>
     </table>
