@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-
 <h1>タスク一覧</h1>
 
     
@@ -36,5 +32,3 @@
    
     {{ $tasks->links('pagination::bootstrap-4') }}
     {!! link_to_route('tasks.create', '新規タスクの入力', [], ['class' => 'btn btn-primary']) !!}
-
-@endsection
