@@ -88,7 +88,7 @@ class TasksController extends Controller
     public function show($id)
     {
         $task = Task::find($id);
-        if (\Auth::id() === $task->user_id) {
+        if (!empty($task) and \Auth::id() === $task->user_id) {
             return view('tasks.show', [
                 'task' => $task,
             ]);
@@ -107,7 +107,7 @@ class TasksController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
-        if (\Auth::id() === $task->user_id) {
+        if (!empty($task) and \Auth::id() === $task->user_id) {
             return view('tasks.edit', [
                 'task' => $task,
             ]);
@@ -133,7 +133,7 @@ class TasksController extends Controller
             
         ]);
         $task = Task::find($id);
-         if (\Auth::id() === $task->user_id){
+         if (!empty($task) and \Auth::id() === $task->user_id){
             $task->content = $request->content;
             $task->status = $request->status;
             $task->save();
@@ -157,7 +157,7 @@ class TasksController extends Controller
     {
         $tasklist = \App\Task::find($id);
 
-        if (\Auth::id() === $tasklist->user_id) {
+        if (!empty($tasklist) and \Auth::id() === $tasklist->user_id) {
             $tasklist->delete();
         }
 
