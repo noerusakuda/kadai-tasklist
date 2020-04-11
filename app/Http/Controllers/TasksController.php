@@ -64,8 +64,8 @@ class TasksController extends Controller
     public function store(Request $request)
     {   
         $this->validate($request, [
-            'status' => 'required|max:10'
-            'content' => 'required|max:191'
+            'status' => 'required|max:10',
+            'content' => 'required|max:191',
             
         ]);
         
