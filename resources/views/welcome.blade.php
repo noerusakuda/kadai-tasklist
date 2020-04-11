@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    @if($errors->isNotEmpty())
+{{ dd($errors) }}
+@endif
     @if(\Auth::check()) 
         @include('tasks.tasks')
         
